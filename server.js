@@ -12,8 +12,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+var isConnected = false;
+
 app.get('/', function(req, res) {
-    res.render('home');
+    res.render('home', {connected: isConnected});
 });
 
 app.listen(1337);

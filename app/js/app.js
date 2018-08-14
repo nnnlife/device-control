@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 
 function HelloWorld() {
     return (
-        <div>React welcome</div>
+        <a class="nav-link" href="#">React</a>
     );
 }
 
 ReactDOM.render(
-    <HelloWorld/>, document.querySelector('#root')
+    <HelloWorld/>, document.querySelector('#isconnected')
 );

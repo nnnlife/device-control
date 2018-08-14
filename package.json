@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
-    "express3-handlebars": "^0.5.2",
+    "express-handlebars": "^3.0.0",
     "mongoose": "^5.2.7",
     "morgan": "^1.9.0",
     "protobufjs": "^6.8.8",

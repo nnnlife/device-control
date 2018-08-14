@@ -3,7 +3,7 @@ var app = express();
 var logger = require('morgan');
 var path = require('path');
 var bodyParser = require('body-parser');
-var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
+var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 

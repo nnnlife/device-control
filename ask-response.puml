@@ -1,0 +1,9 @@
+@startuml
+
+participant "Micom" as BMicom <<Backend>>
+participant Emulator <<Emulator>>
+
+Emulator -> Server : Micom Messages
+BMicom -> FrontEnd : hello
+
+@enduml

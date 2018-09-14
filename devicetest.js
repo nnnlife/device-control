@@ -1,13 +1,17 @@
-var micomEmulator = require('./app/js/device/worker')
+var micomEmulator = require('./app/js/device/micom');
 var isConnected = false;
 
+let micomClient = new micomEmulator();
+
 if (!isConnected) {
-    micomEmulator.connectToMicom().then(function(result) {
+    micomClient.connectPromise().then(function(result) {
         isConnected = true;
-        console.log('OK');
+        console.log(result);
     }, function(err) {
         isConnected = false;
     })
 }
 
-console.log('connection ' + isConnected);
+micomClient.on('micom-message', data => {
+    console.log(data);
+});

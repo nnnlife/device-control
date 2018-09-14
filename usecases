@@ -1,0 +1,24 @@
+1. Logging 
+    1-1. Micom Message (Emulator -> Backend, Backend -> Emulator) - <FrontEnd>
+    1-2. Android Log (Emulator -> Backend) - <FrontEnd>
+
+2. Auto Response
+    * 2-1. Send Response (Emulator -> Backend(Read Message rules) -> Emulator)
+    2-2. Setup Response(ASK Command) (FrontEnd -> Backend)
+
+3. Android Properties
+    3-1. Property protobuf (Connect to Emulator from backend)
+
+4. Control
+    4-1. FrontEnd -> Backend -> Emulator
+
+5. TC
+    5-1. TC Registration
+    5-2. TC Perform
+
+6. System Analysis
+    6-1. CPU Usage
+    6-2. Process CPU Usage
+    6-3. Mem Usage
+    6-4. Graphic Usage
+    6-5. I/O Usage

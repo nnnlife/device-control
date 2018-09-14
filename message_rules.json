@@ -90,7 +90,7 @@
                                 }
                             ]
                         },
-                        "store": false
+                        "store": false  
                     },
                     "defaultValues": [
                         {

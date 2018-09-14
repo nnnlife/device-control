@@ -7,6 +7,7 @@ var apiRouter = express.Router();
 var micomEmulator = require('./app/js/device/micom');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var ask_rules = require('./app/js/message_rules').ask_rules;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -68,12 +69,24 @@ apiRouter.route('/connection').get(async function (req, res) {
     }
 });
 
+apiRouter.route('/setup').get((req, res) => {
+    console.log('handle setup', ask_rules);
+    res.json({ask_rules});
+});
+
+apiRouter.route('/drivemode').get((req, res) => {
+    console.log(req.query);
+    res.status(200).send();
+    micomClient.sendData({command:0x8401, payload: Buffer.from([parseInt(req.query.mode), 0, 0,0,0,0,0,0,0,0])});
+});
+
 app.use('/api', apiRouter);
 
 io.on('connection', function(socket) {
     console.log('socket.io connected');
     socket.on('micom-status', data => {
         socket.emit('micom-connect', isConnected);
+        console.log('SEND WHOLE MESSAGE');
         micomMessages.forEach(value => {
             socket.emit('micom-message', value);
         });
